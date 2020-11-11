@@ -1,0 +1,1070 @@
+                         ID: 317f0bc3c208f516a54ce0d8939c6423
+                       Name: Copy_Heartlab_Daily
+                       Path: /ifs/Stor701/Heartlab
+                     Action: copy
+                    Enabled: No
+                     Target: 10.4.98.232
+                Description: Make a copy of Heartlab Every day
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/HeartlabDR
+    Target Snapshot Archive: Yes
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: 4W2D
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: -
+     Snapshot Sync Existing: No
+                   Schedule: Every 1 days at 01:00
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2016-03-04T01:00:01
+               Last Success: 2016-03-04T01:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 821b6fdbdf420494e13610ff7bb1d6e2
+                       Name: Copy_InsightIQ_Hourly
+                       Path: /ifs/Stor701/DailyReplication/InsightIQ
+                     Action: copy
+                    Enabled: No
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/DailyReplication/InsightIQ
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ-%{SrcCluster}-%{PolicyName}-%Y-%m-%d_%H-%M-%S
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ-%{SrcCluster}-%{PolicyName}-latest
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: -
+     Snapshot Sync Existing: No
+                   Schedule: Manually scheduled
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: unknown
+               Last Started: -
+               Last Success: -
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: No
+--------------------------------------------------------------------------------
+                         ID: f4e290f90a775acebed2622a243fc782
+                       Name: sync201_CVFujiPrimary_Daily
+                       Path: /ifs/Stor701/DailyReplication/FujiCV/CVFujiPrimary
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/gry-isilon06/general/FujiCV/CVFujiPrimary
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: %{PolicyName}-Archive-%{SrcCluster}-%e
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: %{PolicyName}-Daily
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every day at 12:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T00:00:01
+               Last Success: 2020-11-01T00:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 241b7a3b5676d4a7380563a1915ce4bd
+                       Name: sync201_Claris_Daily
+                       Path: /ifs/Stor701/DailyReplication/Claris
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/gry-isilon06/general/Claris
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: %{PolicyName}-Archive-%{SrcCluster}-%e
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: %{PolicyName}-Daily
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 03:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T03:00:01
+               Last Success: 2020-10-31T03:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 03256cc3cd205a9eb2b49a5e695c42eb
+                       Name: sync201_FLX_Daily
+                       Path: /ifs/Stor701/Fuji/FLX
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/Stor701/Fuji/FLX
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 03:30 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T03:30:01
+               Last Success: 2020-10-31T03:30:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 5a0600e7613b62d79544676e72e60448
+                       Name: sync201_Fuji_STE_Daily
+                       Path: /ifs/Stor701/Fuji/STE
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/Stor701/Fuji/STE
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 03:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T03:00:01
+               Last Success: 2020-10-31T03:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: c37b769f2399ee32104ee66384cd624b
+                       Name: sync201_Fuji_SVE_Daily
+                       Path: /ifs/Stor701/Fuji/SVE
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/Stor701/Fuji/SVE
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 04:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T04:00:01
+               Last Success: 2020-10-31T04:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: bb08ecc8cc2a651bd3ed2ac815878842
+                       Name: sync201_GRYNPIFTP_Daily
+                       Path: /ifs/Stor701/NoReplication/GRYNPIFTP
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/gry-isilon06/general/GRYNPIFTP
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: %{PolicyName}-Archive-%{SrcCluster}-%e
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: %{PolicyName}-Daily
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 04:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T04:00:01
+               Last Success: 2020-10-31T04:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: d286c3b6e8cc35251483893ede4865c8
+                       Name: sync201_Heartlab_Daily
+                       Path: /ifs/Stor701/Heartlab
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/gry-isilon06/general/Heartlab
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 03:15 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T03:15:01
+               Last Success: 2020-10-31T03:15:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: b08eed390e9eda79ba139d98aa72d4ef
+                       Name: sync201_NCMCNatSleepArch_Daily
+                       Path: /ifs/Stor701/DailyReplication/Natus/NCMCNatSleepArch
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/gry-isilon06/general/Natus/NCMCNatSleepArch
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: %{PolicyName}-Archive-%{SrcCluster}-%e
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: %{PolicyName}-Daily
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 04:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T04:00:01
+               Last Success: 2020-10-31T04:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 92641a9a83689fe3d0ed365df612ce62
+                       Name: sync201_NCMCNatSleepTrans_Daily
+                       Path: /ifs/Stor701/DailyReplication/Natus/NCMCNatSleepTrans
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/gry-isilon06/general/Natus/NCMCNatSleepTrans
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: %{PolicyName}-Archive-%{SrcCluster}-%e
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: %{PolicyName}-Daily
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 05:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T05:00:01
+               Last Success: 2020-10-31T05:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 95b52bd72b76b0826c72ccab416f5da0
+                       Name: sync201_VideoCenter_Hourly
+                       Path: /ifs/Stor701/DailyReplication/VideoCenter
+                     Action: sync
+                    Enabled: Yes
+                     Target: bhsnas201.bhs
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/data/gry-isilon06/general/VideoCenter
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: %{PolicyName}-Archive-%{SrcCluster}-%e
+ Target Snapshot Expiration: 1W
+      Target Snapshot Alias: %{PolicyName}-Daily
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: Manually scheduled
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-26T16:01:35
+               Last Success: 2020-10-26T16:01:35
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: ace0fa83d4e850d40adc03f5cb739bba
+                       Name: sync702_BMG_Daily
+                       Path: /ifs/Stor701/Fuji/BMG
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/BMG
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 12:45 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T00:45:01
+               Last Success: 2020-11-01T00:45:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 6be9b74dda70553a0cf2f78e80767965
+                       Name: sync702_FTC_Daily
+                       Path: /ifs/Stor701/Fuji/FTC
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/FTC
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 02:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-10-31T02:00:01
+               Last Success: 2020-10-31T02:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 1855d36c982dfe184a176255f5bdf8ae
+                       Name: sync702_Fuji_All_Daily
+                       Path: /ifs/Stor701/Fuji/ALL
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/ALL
+    Target Snapshot Archive: Yes
+    Target Snapshot Pattern: %{PolicyName}-Archive-%{SrcCluster}-%e
+ Target Snapshot Expiration: 12W6D
+      Target Snapshot Alias: %{PolicyName}-Daily
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 12:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T00:00:01
+               Last Success: 2020-11-01T00:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: dbee32f82ffc4473ef3a81cfa900435b
+                       Name: sync702_GRY_Daily
+                       Path: /ifs/Stor701/Fuji/GRY
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/GRY
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 12:15 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T00:15:01
+               Last Success: 2020-11-01T00:15:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 8d9f077123f9477360b20f402cab4e5f
+                       Name: sync702_OGA_Daily
+                       Path: /ifs/Stor701/Fuji/OGA
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/OGA
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 01:30 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T01:30:15
+               Last Success: 2020-11-01T01:30:15
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 9c4dcdfebfc5a3f2b1b7e36ca203e2f2
+                       Name: sync702_PGE_Daily
+                       Path: /ifs/Stor701/Fuji/PGE
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/PGE
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 01:15 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T01:15:01
+               Last Success: 2020-11-01T01:15:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: b5262f2003b4f12607b8052a75a08752
+                       Name: sync702_TOR_Daily
+                       Path: /ifs/Stor701/Fuji/TOR
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/TOR
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 01:00 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T01:00:01
+               Last Success: 2020-11-01T01:00:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 7fbfddc6c82cf661063d8ee680654f9a
+                       Name: sync702_WHE_Daily
+                       Path: /ifs/Stor701/Fuji/WHE
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/WHE
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 12:30 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T00:30:01
+               Last Success: 2020-11-01T00:30:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes
+--------------------------------------------------------------------------------
+                         ID: 44c8f2871f173ffba8628cd6c92729a9
+                       Name: sync702_WOR_Daily
+                       Path: /ifs/Stor701/Fuji/WOR
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/WOR
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
+     Snapshot Sync Existing: No
+                   Schedule: every 1 days at 12:45 AM
+                  Job Delay: -
+Skip When Source Unmodified: No
+                  Rpo Alert: -
+                  Log Level: notice
+          Log Removed Files: No
+           Workers Per Node: 3
+             Report Max Age: 1Y
+           Report Max Count: 2000
+            Force Interface: No
+    Restrict Target Network: No
+Target Compare Initial Sync: No
+                Disable Stf: No
+          Expected Dataloss: No
+               Disable Fofb: No
+         Disable File Split: No
+Changelist creation enabled: No
+       Accelerated Failback: No
+                   Priority: normal
+            Cloud Deep Copy: deny
+             Last Job State: finished
+               Last Started: 2020-11-01T00:45:01
+               Last Success: 2020-11-01T00:45:01
+               Password Set: No
+                 Conflicted: No
+             Has Sync State: Yes

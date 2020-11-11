@@ -1,0 +1,23 @@
+                         ID: 9c4dcdfebfc5a3f2b1b7e36ca203e2f2
+                       Name: sync702_PGE_Daily
+                       Path: /ifs/Stor701/Fuji/PGE
+                     Action: sync
+                    Enabled: Yes
+                     Target: stor702.bannerhealth.com
+                Description: -
+            Check Integrity: Yes
+ Source Include Directories: -
+ Source Exclude Directories: -
+              Source Subnet: -
+                Source Pool: -
+      Source Match Criteria: -
+                Target Path: /ifs/Stor702/FujiReplication/PGE
+    Target Snapshot Archive: No
+    Target Snapshot Pattern: SIQ_%{SrcCluster}_%{PolicyName}_%Y-%m-%d_%H-%M
+ Target Snapshot Expiration: Never
+      Target Snapshot Alias: SIQ_%{SrcCluster}_%{PolicyName}
+Target Detect Modifications: Yes
+    Source Snapshot Archive: No
+    Source Snapshot Pattern: -
+ Source Snapshot Expiration: Never
+      Snapshot Sync Pattern: *
